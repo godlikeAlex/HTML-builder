@@ -14,9 +14,9 @@ async function initScript() {
       return;
     }
 
-    const [fileName, fileExt] = file.name.split('.');
+    const fileExt = path.extname(file.name).slice(1);
 
-    process.stdout.write(`${fileName} - ${fileExt} - ${stats.size} \n`);
+    process.stdout.write(`${file.name} - ${fileExt} - ${stats.size} \n`);
   });
 }
 

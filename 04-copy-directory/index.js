@@ -5,6 +5,7 @@ async function initScript() {
   const targetFolderPath = path.join(__dirname, 'files');
   const copyFolderPath = path.join(__dirname, 'files-copy');
 
+  await fs.rm(copyFolderPath, { recursive: true, force: true });
   await fs.mkdir(copyFolderPath, {
     recursive: true,
   });
